@@ -1,0 +1,39 @@
+server:
+  port: 9090
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: myuser
+      password: 123456
+      database: ubank
+  cache:
+    type: redis
+  redis:
+    database: 3
+    host: localhost
+    password: 123456
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 100
+        min-idle: 100
+        max-active: 8
+        max-wait: -1s
+    timeout: 60s
+
+kafka:
+  bootstrapserver: 192.168.3.250:9092
+  groupid: group-kafka
+  chatpair: myworld.kafka.chatpair
+  chatgroup: myworld.kafka.chatgroup
+  chatall: myworld.kafka.chatall
+  durable: myworld.kafka.durable
+
+feign:
+  cgate:
+    url: http://localhost:9005
+  swealth:
+    url: http://localhost:7070

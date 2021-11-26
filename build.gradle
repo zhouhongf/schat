@@ -1,0 +1,34 @@
+plugins {
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'org.springframework.boot'
+}
+dependencies {
+    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+    implementation("org.springframework.cloud:spring-cloud-config-client")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("io.github.openfeign:feign-okhttp:${feignOkhttpVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+    implementation("org.springframework.boot:spring-boot-starter-data-rest")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
+    implementation("org.springframework.boot:spring-boot-starter-websocket")
+    implementation("org.springframework.boot:spring-boot-starter-json")
+    implementation("org.springframework.kafka:spring-kafka")
+
+    implementation("javax.servlet:javax.servlet-api:3.1.0")
+    implementation("io.jsonwebtoken:jjwt-api:${jwtVersion}")
+    implementation("io.jsonwebtoken:jjwt-impl:${jwtVersion}")
+    implementation("io.jsonwebtoken:jjwt-jackson:${jwtVersion}")
+
+    implementation("com.alibaba:fastjson:1.2.52")
+    implementation("net.coobird:thumbnailator:0.4.8")
+    implementation("org.apache.httpcomponents:httpclient:4.5.10")
+    implementation("org.apache.httpcomponents:httpmime:4.5.10")
+}
+
+application {
+    mainClassName = 'com.myworld.schat.SchatApplicationKt'
+}
